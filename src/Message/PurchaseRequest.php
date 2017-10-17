@@ -17,7 +17,7 @@ class PurchaseRequest extends AbstractRequest
      */
     protected $endpoints = array(
         // 'authorize' => 'https://secure.payu.com.tr/order/alu/v3',
-        'purchase' => '#',
+        'purchase' => 'https://payment.napas.com.vn/gateway/vpcpay.do',
         'sandbox' => 'https://sandbox.napas.com.vn/gateway/vpcpay.do',
     );
 
@@ -207,7 +207,7 @@ class PurchaseRequest extends AbstractRequest
      */
     public function getEndpoint()
     {
-        return $this->getTestMode() ? $this->endpoints['sandbox'] : $this->endpoints[$endpoint];
+        return $this->getTestMode() ? $this->endpoints['sandbox'] : $this->endpoints['purchase'];
     }
 
 
