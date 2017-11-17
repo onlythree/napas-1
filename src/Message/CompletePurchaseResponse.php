@@ -35,18 +35,46 @@ class CompletePurchaseResponse extends AbstractResponse
     {
         $code = $this->getResponseCode();
         switch ($code) {
-            case -1: $result = "Thong tin khong dung"; break;
-            case 0 : $result = "Giao dich thanh cong"; break;
-            case 1 : $result = "Ngan hang tu choi thanh toan: the/tai khoan bi khoa"; break;
-            case 2 : $result = "Loi so 2"; break;
-            case 3 : $result = "The het han"; break;
-            case 4 : $result = "Qua so lan giao dich cho phep. (Sai OTP, qua han muc trong ngay)"; break;
-            case 5 : $result = "Khong co tra loi tu Ngan hang"; break;
-            case 6 : $result = "Loi giao tiep voi Ngan hang"; break;
-            case 7 : $result = "Tai khoan khong du tien"; break;
-            case 8 : $result = "Loi du lieu truyen"; break;
-            case 9 : $result = "Kieu giao dich khong duoc ho tro"; break;
-            default  : $result = "Loi khong xac dinh"; 
+            case -1: $result = "Thông tin không chính xác"; break;
+            case 0 : $result = "Giao dịch thành công"; break;
+            case 1 : $result = "Ngân hàng không xác nhận. Tài khoản đã bị khóa hoặc tài khoản đã bị khóa"; break;
+            case 3 : $result = "Thẻ đã quá hạn"; break;
+            case 4 : $result = "Quá hạn ( Sai mã OTP hoặc quá số lần thanh toán trong ngày )"; break;
+            case 5 : $result = "Ngân hàng không phản hồi"; break;
+            case 6 : $result = "Bank Communication failure"; break;
+            case 7 : $result = "Insufficient fund"; break;
+            case 8 : $result = "Invalid checksum"; break;
+            case 9 : $result = "Transaction type not support"; break;
+            case 10 : $result = "Other error"; break;
+            case 11 : $result = "Verify card is successful"; break;
+            case 12 : $result = "Your payment is unsuccessful. Transaction exceeds amount limit."; break;
+            case 13 : $result = "You have been not registered online payment services. Please
+contact your bank."; break;
+            case 14 : $result = "Invalid OTP (One time password)"; break;
+            case 15 : $result = "Invalid static password"; break;
+            case 16 : $result = "Incorrect Cardholder's name"; break;
+            case 17 : $result = "Incorrect card number"; break;
+            case 18 : $result = "Date of validity is incorrect (issue date)"; break;
+            case 19 : $result = "Date of validity is incorrect (expiration date) "; break;
+            case 20 : $result = "Unsuccessful transaction"; break;
+            case 21 : $result = "OTP (One time password) time out"; break;
+            case 22 : $result = "Unsuccessful transaction"; break;
+            case 22 : $result = "Unsuccessful transaction"; break;
+            case 23 : $result = "Your payment is not approved. Your card/account is ineligible for
+payment"; break;
+            case 24 : $result = "Your payment is unsuccessful. Transaction exceeds amount limit"; break;
+            case 25 : $result = "Transaction exceeds amount limit."; break;
+            case 26 : $result = "Transactions awaiting confirmation from the bank"; break;
+            case 27 : $result = "You have entered wrong authentication information"; break;
+            case 28 : $result = "Your payment is unsuccessful. Transaction exceeds time limit"; break;
+            case 29 : $result = "Transaction failed. Please contact your bank for information."; break;
+            case 30 : $result = "Your payment is unsuccessful. Amount is less than minimum limit."; break;
+            case 31 : $result = "Orders not found. Support for query api."; break;
+            case 32 : $result = "Orders not to make payments. Support for query api. "; break;
+            case 32 : $result = "Orders not to make payments. Support for query api. "; break;
+            case 33 : $result = "Duplicate orders. Support for query api. "; break;
+
+            default  : $result = "Lỗi không xác định";
         }
 
         return $result;
